@@ -1,4 +1,4 @@
-package com.xll.adt;
+package com.xll.adt.adt;
 
 public class MyStack {
 	/**
