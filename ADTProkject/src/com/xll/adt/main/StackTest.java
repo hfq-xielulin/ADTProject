@@ -11,7 +11,13 @@ public class StackTest {
 		doqueue();
 	}
 	
-	
+	/**
+	 * 
+	 * @author:xielulin 
+	 * @Description: 队列的测试用例
+	 * @throws:
+	 * @date:2017年11月30日 下午6:03:27
+	 */
 	private static void doqueue() {
 		System.out.println("**************队列********************");
 		
