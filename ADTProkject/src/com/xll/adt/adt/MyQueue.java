@@ -3,7 +3,7 @@ package com.xll.adt.adt;
 /**
  * 
 * @ClassName: MyQueue 
-* @Description: 队列的数组实现
+* @Description: 无序队列的数组实现
 * @author: xielulin
 * @date 2017年11月30日 下午6:04:07
  */
