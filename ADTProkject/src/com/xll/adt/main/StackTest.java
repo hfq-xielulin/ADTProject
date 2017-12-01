@@ -2,7 +2,7 @@ package com.xll.adt.main;
 
 import com.xll.adt.adt.MyQueue;
 import com.xll.adt.adt.MyStack;
-import com.xll.adt.adt.priorityQueue;
+import com.xll.adt.adt.PriorityQueue;
 
 public class StackTest {
 
@@ -16,17 +16,17 @@ public class StackTest {
 	private static void doPriQueue() {
 		System.out.println("**************有序队列********************");
 		
-		priorityQueue priorityQueue=new priorityQueue(10);
+		PriorityQueue PriorityQueue=new PriorityQueue(10);
 		
-		priorityQueue.insert(10);
-		priorityQueue.insert(15);
-		priorityQueue.insert(13);
-		priorityQueue.insert(17);
-		priorityQueue.insert(19);
+		PriorityQueue.insert(10);
+		PriorityQueue.insert(15);
+		PriorityQueue.insert(13);
+		PriorityQueue.insert(17);
+		PriorityQueue.insert(19);
 		
-		System.out.println(priorityQueue.size());
-		while(!priorityQueue.isEmpty()) {
-			System.out.println(priorityQueue.remove());
+		System.out.println(PriorityQueue.size());
+		while(!PriorityQueue.isEmpty()) {
+			System.out.println(PriorityQueue.remove());
 		}
 		
 		System.out.println("******************************************");

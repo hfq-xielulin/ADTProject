@@ -7,7 +7,7 @@ package com.xll.adt.adt;
 * @author: xielulin
 * @date 2017年12月1日 上午10:04:22
  */
-public class priorityQueue {
+public class PriorityQueue {
 
 	/**
 	 * 队列的最大长度
@@ -28,7 +28,7 @@ public class priorityQueue {
 	 * 初始化队列
 	 * @param size
 	 */
-	public priorityQueue(int size) {
+	public PriorityQueue(int size) {
 		maxSize=size;
 		PriQueue=new int [maxSize];
 		count=0;
