@@ -1,5 +1,6 @@
 package com.xll.adt.main;
 
+import com.xll.adt.adt.MyLinkedList;
 import com.xll.adt.adt.MyQueue;
 import com.xll.adt.adt.MyStack;
 import com.xll.adt.adt.PriorityQueue;
@@ -11,8 +12,31 @@ public class StackTest {
 		doStack();
 		doqueue();
 		doPriQueue();
+		doList();
 	}
 	
+	/**
+	 * 
+	 * @author:xielulin 
+	 * @Description: 简单链表测试用例
+	 * @throws:
+	 * @date:2017年12月1日 下午4:17:35
+	 */
+	private static void doList() {
+		System.out.println("**************list链表********************");
+		MyLinkedList<String> list=new MyLinkedList<>();
+		list.insertFirst("hello ");
+		list.insertFirst("world ");
+		list.insertFirst("hi ");
+		list.insertFirst("java ");
+		list.insertFirst("hello ");
+		
+		list.deleteFirst();
+		
+		list.display();
+		System.out.println("******************************************");
+	}
+
 	private static void doPriQueue() {
 		System.out.println("**************有序队列********************");
 		
