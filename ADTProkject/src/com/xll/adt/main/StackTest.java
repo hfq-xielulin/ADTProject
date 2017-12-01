@@ -1,5 +1,6 @@
 package com.xll.adt.main;
 
+import com.xll.adt.adt.LinkList;
 import com.xll.adt.adt.MyLinkedList;
 import com.xll.adt.adt.MyQueue;
 import com.xll.adt.adt.MyStack;
@@ -8,13 +9,32 @@ import com.xll.adt.adt.PriorityQueue;
 public class StackTest {
 
 	public static void main(String[] args) {
-		
+		/*
 		doStack();
 		doqueue();
 		doPriQueue();
-		doList();
+		doList();*/
+		doLinkList();
 	}
 	
+	private static void doLinkList() {
+		System.out.println("**************list链表********************");
+		LinkList<String> list=new LinkList<String>();
+		list.insretFirst("hello");
+		
+		list.insretLast("world");
+		
+	/*	list.insretFirst("hello");
+		
+		list.insretLast("world");*/
+/*		list.display();
+		list.deleteFirst();*/
+	
+		list.deleteLast();
+		list.display();
+		System.out.println("******************************************");
+	}
+
 	/**
 	 * 
 	 * @author:xielulin 
