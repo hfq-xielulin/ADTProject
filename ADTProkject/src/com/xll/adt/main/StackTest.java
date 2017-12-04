@@ -1,6 +1,7 @@
 package com.xll.adt.main;
 
 import com.xll.adt.adt.LinkList;
+import com.xll.adt.adt.ListQueue;
 import com.xll.adt.adt.MyLinkedList;
 import com.xll.adt.adt.MyQueue;
 import com.xll.adt.adt.MyStack;
@@ -14,9 +15,55 @@ public class StackTest {
 		doqueue();
 		doPriQueue();
 		doList();*/
-		doLinkList();
+		//doLinkList();
+		doqueue();
+		doListQueue();
 	}
 	
+	private static void doListQueue() {
+System.out.println("**************基于list实现的队列********************");
+		
+		ListQueue<Integer> queue=new ListQueue<Integer> ();
+		
+		/**
+		 * 插入8个数据
+		 */
+		queue.insert(10);
+		queue.insert(11);
+		queue.insert(12);
+		queue.insert(13);
+		queue.insert(14);
+		queue.insert(15);
+		queue.insert(16);
+		queue.insert(17);
+		
+		/**
+		 * 删除3个数据
+		 */
+		queue.remove();
+		queue.remove();
+		queue.remove();
+		
+		/**
+		 * 插入7个数据
+		 */
+		queue.insert(4);
+		queue.insert(5);
+		queue.insert(6);
+		queue.insert(7);
+		
+		queue.insert(8);
+		queue.insert(9);
+		queue.insert(10);
+		
+		queue.display();
+		while(!queue.isEmpty()) {
+			System.out.println(queue.remove());
+		}
+		
+		System.out.println("************************************");
+	}
+
 	private static void doLinkList() {
 		System.out.println("**************list链表********************");
 		LinkList<String> list=new LinkList<String>();
