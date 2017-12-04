@@ -99,7 +99,7 @@ public class LinkList<E> {
 	 * @throws:
 	 * @date:2017年12月1日 下午5:42:07
 	 */
-	public Node<E> deleteLast() {
+	public E deleteLast() {
 		Node<E> temp = first;
 		if (first.next == null) {//如果只有一个节点
 			last = null; //last指向null
@@ -113,11 +113,10 @@ public class LinkList<E> {
 			last = temp; //last指向temp节点
 			last.next=null;
 		}
-		return temp;
+		return temp.data;
 	}
 
 	public void display() {
-		System.out.println("**List:first->end***");
 
 		Node<E> temp = first;
 		while (temp != null) {
@@ -162,7 +161,7 @@ public class LinkList<E> {
 		}
 
 		public void display() {
-			System.out.println("data:" + data);
+			System.out.println(data);
 		}
 
 		@Override
