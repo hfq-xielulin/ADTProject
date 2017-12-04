@@ -20,16 +20,24 @@ public class StackTest {
 	private static void doLinkList() {
 		System.out.println("**************list链表********************");
 		LinkList<String> list=new LinkList<String>();
-		list.insretFirst("hello");
+		/*list.insretFirst("hello");
 		
 		list.insretLast("world");
 		
-	/*	list.insretFirst("hello");
+		list.insretFirst("hello");
 		
 		list.insretLast("world");*/
-/*		list.display();
-		list.deleteFirst();*/
-	
+		
+		list.insretFirst("2");
+		list.insretFirst("1");
+		list.insretLast("3");
+		list.insretLast("4");
+		
+		
+		
+		list.display();
+		list.deleteFirst();
+		list.display();
 		list.deleteLast();
 		list.display();
 		System.out.println("******************************************");

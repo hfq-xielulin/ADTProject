@@ -111,6 +111,7 @@ public class LinkList<E> {
 				temp = temp.next;
 			}
 			last = temp; //last指向temp节点
+			last.next=null;
 		}
 		return temp;
 	}
