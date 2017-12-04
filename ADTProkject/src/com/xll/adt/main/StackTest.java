@@ -6,6 +6,7 @@ import com.xll.adt.adt.MyLinkedList;
 import com.xll.adt.adt.MyQueue;
 import com.xll.adt.adt.MyStack;
 import com.xll.adt.adt.PriorityQueue;
+import com.xll.adt.adt.SortedList;
 
 public class StackTest {
 
@@ -16,12 +17,31 @@ public class StackTest {
 		doPriQueue();
 		doList();*/
 		//doLinkList();
-		doqueue();
-		doListQueue();
+		/*doqueue();
+		doListQueue();*/
+		
+		
+		doSortedList();
 	}
 	
+	private static void doSortedList() {
+		System.out.println("**************有序链表********************");
+		SortedList list=new SortedList();
+		list.insert(10);
+		list.insert(13);
+		list.insert(12);
+		list.insert(1);
+		list.insert(19);
+		list.insert(17);
+		
+		list.display();
+		
+		
+		System.out.println("*****************************************");
+	}
+
 	private static void doListQueue() {
-System.out.println("**************基于list实现的队列********************");
+		System.out.println("**************基于list实现的队列********************");
 		
 		ListQueue<Integer> queue=new ListQueue<Integer> ();
 		
