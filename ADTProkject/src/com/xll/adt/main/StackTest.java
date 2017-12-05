@@ -1,6 +1,10 @@
 package com.xll.adt.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.xll.adt.adt.LinkList;
+import com.xll.adt.adt.LinkedList;
 import com.xll.adt.adt.ListQueue;
 import com.xll.adt.adt.MyLinkedList;
 import com.xll.adt.adt.MyQueue;
@@ -8,43 +12,56 @@ import com.xll.adt.adt.MyStack;
 import com.xll.adt.adt.PriorityQueue;
 import com.xll.adt.adt.SortedList;
 
+@SuppressWarnings("unused")
 public class StackTest {
 
 	public static void main(String[] args) {
-		/*
-		doStack();
+
+		/*doStack();
 		doqueue();
 		doPriQueue();
-		doList();*/
-		//doLinkList();
-		/*doqueue();
-		doListQueue();*/
-		
-		
-		doSortedList();
+		doList();
+		doLinkList();
+		doqueue();
+		doListQueue();
+		doSortedList();*/
+
+		doLinkedList();
 	}
-	
+
+	private static void doLinkedList() {
+		System.out.println("**************双向链表********************");
+		LinkedList<String> list = new LinkedList<String>();
+		list.insertHead("hello");
+		list.inserLast("world");
+		list.insertAfter("hi", "hello");
+		list.displayByHead();
+		list.delete("hi");
+		list.displayByLast();
+
+		System.out.println("****************************************");
+	}
+
 	private static void doSortedList() {
 		System.out.println("**************有序链表********************");
-		SortedList list=new SortedList();
+		SortedList list = new SortedList();
 		list.insert(10);
 		list.insert(13);
 		list.insert(12);
 		list.insert(1);
 		list.insert(19);
 		list.insert(17);
-		
+
 		list.display();
-		
-		
+
 		System.out.println("*****************************************");
 	}
 
 	private static void doListQueue() {
 		System.out.println("**************基于list实现的队列********************");
-		
-		ListQueue<Integer> queue=new ListQueue<Integer> ();
-		
+
+		ListQueue<Integer> queue = new ListQueue<Integer>();
+
 		/**
 		 * 插入8个数据
 		 */
@@ -56,14 +73,14 @@ public class StackTest {
 		queue.insert(15);
 		queue.insert(16);
 		queue.insert(17);
-		
+
 		/**
 		 * 删除3个数据
 		 */
 		queue.remove();
 		queue.remove();
 		queue.remove();
-		
+
 		/**
 		 * 插入7个数据
 		 */
@@ -71,22 +88,22 @@ public class StackTest {
 		queue.insert(5);
 		queue.insert(6);
 		queue.insert(7);
-		
+
 		queue.insert(8);
 		queue.insert(9);
 		queue.insert(10);
-		
+
 		queue.display();
-		while(!queue.isEmpty()) {
+		while (!queue.isEmpty()) {
 			System.out.println(queue.remove());
 		}
-		
+
 		System.out.println("************************************");
 	}
 
 	private static void doLinkList() {
 		System.out.println("**************list链表********************");
-		LinkList<String> list=new LinkList<String>();
+		LinkList<String> list = new LinkList<String>();
 		/*list.insretFirst("hello");
 		
 		list.insretLast("world");
@@ -94,14 +111,12 @@ public class StackTest {
 		list.insretFirst("hello");
 		
 		list.insretLast("world");*/
-		
+
 		list.insretFirst("2");
 		list.insretFirst("1");
 		list.insretLast("3");
 		list.insretLast("4");
-		
-		
-		
+
 		list.display();
 		list.deleteFirst();
 		list.display();
@@ -119,37 +134,37 @@ public class StackTest {
 	 */
 	private static void doList() {
 		System.out.println("**************list链表********************");
-		MyLinkedList<String> list=new MyLinkedList<>();
+		MyLinkedList<String> list = new MyLinkedList<>();
 		list.insertFirst("hello ");
 		list.insertFirst("world ");
 		list.insertFirst("hi ");
 		list.insertFirst("java ");
 		list.insertFirst("hello ");
-		
+
 		list.deleteFirst();
-		
+
 		list.display();
 		System.out.println("******************************************");
 	}
 
 	private static void doPriQueue() {
 		System.out.println("**************有序队列********************");
-		
-		PriorityQueue PriorityQueue=new PriorityQueue(10);
-		
+
+		PriorityQueue PriorityQueue = new PriorityQueue(10);
+
 		PriorityQueue.insert(10);
 		PriorityQueue.insert(15);
 		PriorityQueue.insert(13);
 		PriorityQueue.insert(17);
 		PriorityQueue.insert(19);
-		
+
 		System.out.println(PriorityQueue.size());
-		while(!PriorityQueue.isEmpty()) {
+		while (!PriorityQueue.isEmpty()) {
 			System.out.println(PriorityQueue.remove());
 		}
-		
+
 		System.out.println("******************************************");
-		
+
 	}
 
 	/**
@@ -161,9 +176,9 @@ public class StackTest {
 	 */
 	private static void doqueue() {
 		System.out.println("**************队列********************");
-		
-		MyQueue queue=new MyQueue(10);
-		
+
+		MyQueue queue = new MyQueue(10);
+
 		/**
 		 * 插入8个数据
 		 */
@@ -175,14 +190,14 @@ public class StackTest {
 		queue.insert(15);
 		queue.insert(16);
 		queue.insert(17);
-		
+
 		/**
 		 * 删除3个数据
 		 */
 		queue.remove();
 		queue.remove();
 		queue.remove();
-		
+
 		/**
 		 * 插入7个数据
 		 */
@@ -190,20 +205,18 @@ public class StackTest {
 		queue.insert(5);
 		queue.insert(6);
 		queue.insert(7);
-		
+
 		queue.insert(8);
 		queue.insert(9);
 		queue.insert(10);
-		
-		
-		while(!queue.isEmpty()) {
+
+		while (!queue.isEmpty()) {
 			System.out.println(queue.remove());
 		}
-		
-		System.out.println("************************************");
-		
-	}
 
+		System.out.println("************************************");
+
+	}
 
 	/**
 	 * 
@@ -214,14 +227,14 @@ public class StackTest {
 	 */
 	public static void doStack() {
 		System.out.println("**************栈********************");
-		MyStack myStack=new MyStack(4);
+		MyStack myStack = new MyStack(4);
 		myStack.push(10);
 		myStack.push(20);
 		myStack.push(30);
 		myStack.push(40);
 		myStack.push(50);
-		
-		while(!myStack.isEmpty()) {
+
+		while (!myStack.isEmpty()) {
 			long s = myStack.pop();
 			System.out.println(s);
 		}
