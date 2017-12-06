@@ -17,14 +17,14 @@ public class StackTest {
 
 	public static void main(String[] args) {
 
-		/*doStack();
+		doStack();
 		doqueue();
 		doPriQueue();
 		doList();
 		doLinkList();
 		doqueue();
 		doListQueue();
-		doSortedList();*/
+		doSortedList();
 
 		doLinkedList();
 	}
