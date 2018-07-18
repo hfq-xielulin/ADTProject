@@ -1,5 +1,9 @@
 package com.xll.adt.adt;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * 二叉查找树
 * @ClassName: BinarySerachTree 
@@ -145,50 +149,126 @@ public class BinarySerachTree <T extends Comparable<T>>{
 		else
 			return true;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	public BinaryNode getRoot(){
+		return root;
+	}
 
 	@Override
 	public String toString() {
 		return "BinarySerachTree [root=" + root + "]";
 	}
+	 /**
+     * 前序遍历
+     * 非递归
+     */
+    public void preOrder1(BinaryNode<T> Node){
+        System.out.println("前序遍历：");
+        Stack<BinaryNode> stack = new Stack<>();
+        while(Node != null || !stack.empty())
+        {
+            while(Node != null)
+            {
+                System.out.print(Node.element + "   ");
+                stack.push(Node);
+                Node = Node.left;
+            }
+            if(!stack.empty())
+            {
+                Node = stack.pop();
+                Node = Node.right;
+            }
+        }
+        System.out.println();
+    }
 
+    /**
+     * 中序遍历
+     * 非递归
+     */
+    public void midOrder1(BinaryNode<T> Node){
+        System.out.println("中序遍历：");
+        Stack<BinaryNode> stack = new Stack<>();
+        while(Node != null || !stack.empty())
+        {
+            while (Node != null)
+            {
+                stack.push(Node);
+                Node = Node.left;
+            }
+            if(!stack.empty())
+            {
+                Node = stack.pop();
+                System.out.print(Node.element + "   ");
+                Node = Node.right;
+            }
+        }
+        System.out.println();
+    }
 
+    /**
+     * 后序遍历
+     * 非递归
+     */
+    public void posOrder1(BinaryNode<T> Node){
+        System.out.println("后序遍历：");
+        Stack<BinaryNode> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        int i = 1;
+        while(Node != null || !stack1.empty())
+        {
+            while (Node != null)
+            {
+                stack1.push(Node);
+                stack2.push(0);
+                Node = Node.left;
+            }
 
+            while(!stack1.empty() && stack2.peek() == i)
+            {
+                stack2.pop();
+                System.out.print(stack1.pop().element + "   ");
+            }
 
+            if(!stack1.empty())
+            {
+                stack2.pop();
+                stack2.push(1);
+                Node = stack1.peek();
+                Node = Node.right;
+            }
+        }
+        System.out.println();
+    }
 
+    /*
+     * 层序遍历
+     * 非递归
+     */
+    public void levelOrder1(BinaryNode<T> node) {
+        System.out.println("层序遍历：");
+        if (node == null) {
+            return;
+        }
 
+        BinaryNode<T> binaryNode;
+        Queue<BinaryNode<T>> queue =new LinkedList<>();
+        queue.add(node);
 
+        while (queue.size() != 0) {
+            binaryNode = queue.poll();
 
+            System.out.print(binaryNode.element + "  ");
 
-
-
-
-
-
-
-
-
-
-
-
+            if (binaryNode.left != null) {
+                queue.offer(binaryNode.left);
+            }
+            if (binaryNode.right != null) {
+                queue.offer(binaryNode.right);
+            }
+        }
+        System.out.println();
+    }
 	private static class BinaryNode<T>{
 		/**
 		 * the date in the code
@@ -222,7 +302,5 @@ public class BinarySerachTree <T extends Comparable<T>>{
 		public String toString() {
 			return "BinaryNode [element=" + element + ", left=" + left + ", right=" + right + "]";
 		}
-		
-		
 	}
 }

@@ -30,17 +30,20 @@ public class StackTest {
 		tree.insert(30);
 		tree.insert(35);
 		tree.insert(23);
-	
-		tree.printTree();
-		System.out.println("aaaaaaaaaaa");
-		System.out.println(tree.finMax());
-	
-		
-		System.out.println(	tree.finMin());
-		System.out.println("aaaaaaaaaaa");
-		tree.remove(30);
-		
-		tree.printTree();
+//		tree.printTree();
+		tree.preOrder1(tree.getRoot());
+		tree.midOrder1(tree.getRoot());
+		tree.posOrder1(tree.getRoot());
+		tree.levelOrder1(tree.getRoot());
+//		System.out.println("aaaaaaaaaaa");
+//		System.out.println(tree.finMax());
+//	
+//		
+//		System.out.println(	tree.finMin());
+//		System.out.println("aaaaaaaaaaa");
+//		tree.remove(30);
+//		
+//		tree.printTree();
 	}
 	public void doADT() {
 
