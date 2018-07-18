@@ -30,11 +30,18 @@ public class StackTest {
 		tree.insert(30);
 		tree.insert(35);
 		tree.insert(23);
+		
 //		tree.printTree();
 		tree.preOrder1(tree.getRoot());
 		tree.midOrder1(tree.getRoot());
 		tree.posOrder1(tree.getRoot());
 		tree.levelOrder1(tree.getRoot());
+		
+		tree.PreOrder(tree.getRoot());
+        System.out.println();
+		tree.InOrder(tree.getRoot());
+        System.out.println();
+		tree.PostOrder(tree.getRoot());
 //		System.out.println("aaaaaaaaaaa");
 //		System.out.println(tree.finMax());
 //	
