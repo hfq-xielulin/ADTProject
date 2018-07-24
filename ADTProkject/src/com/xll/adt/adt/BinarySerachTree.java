@@ -282,6 +282,51 @@ public class BinarySerachTree <T extends Comparable<T>>{
         }
         System.out.println();
     }
+    
+    
+    /**
+     *对于树的后续遍历，由于要多次经过每个节点，所以要
+     *设置一个状态变量来指示到达一个节点后是进入右子树，
+     *还是他是从右子树返回的不再需要进入右子树了。
+    * @Title: postorderTraversal  
+    * @Description: 
+    * @param @param Node       
+    * @return void     
+    * @throws
+     */
+    
+    public void postorderTraversal(BinaryNode<T> Node){
+        int[] sign = new int[20];
+        Stack stack = new Stack();
+        BinaryNode t =null;
+        t = Node;
+        if( t==null )
+            return;
+
+        while(t!=null){
+            stack.push(t);
+            sign[ stack.size()-1] = 0;
+            t = t.left;
+        }
+        while(!stack.isEmpty() ){
+            t = (BinaryNode)stack.peek();
+
+            while( t.right!=null && sign[stack.size()-1]==0 ){
+                sign[stack.size()-1] = 1;
+                t = t.right;
+                while(t!=null){
+                    stack.push(t);
+                    sign[stack.size()-1] = 0;
+                    t = t.left;
+                }
+                t = (BinaryNode)stack.peek();
+
+            }
+            System.out.println( t.element);
+            stack.pop();
+            }
+        }
+
 
     /*
      * 层序遍历
